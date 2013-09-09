@@ -1,0 +1,48 @@
+Metadata-Version: 1.1
+Name: django-ajax-chat
+Version: 0.1
+Summary: A simple Django ajax chat.
+Home-page: http://www.sharan.co/
+Author: sharan salokye
+Author-email: salokye@sharan.co
+License: BSD License
+Description: =====
+        Django Chat
+        =====
+        
+        DjangoChat is a simple Django Chat app
+        
+        
+        
+        Quick start
+        -----------
+        
+        1. Add "djangoChat" to your INSTALLED_APPS setting like this::
+        
+              INSTALLED_APPS = (
+                  ...
+                  'djangoChat',
+              )
+        
+        2. Include the polls URLconf in your project urls.py like this::
+        
+              url(r'^chat/', include('djangoChat.urls')),
+        
+        3. Run `python manage.py migrate` to create the djangoChat models.
+        
+        4. Start the development server and visit http://127.0.0.1:8000/chat/
+        
+        
+        
+        
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content

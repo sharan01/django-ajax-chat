@@ -1,0 +1,16 @@
+{% extends "djangoChat/base.html" %}
+
+{% block body %}
+
+
+<div class="container" style="max-width:400px">
+
+      <form method="post" class="form-signin">{% csrf_token %}
+        <h2 class="form-signin-heading">Please Log in</h2>
+        <input type="text" name="username" class="form-control" placeholder="username" autofocus>
+        <input type="password" name="password" class="form-control" placeholder="Password">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+      </form>
+		<p>{{error}}</p>
+    </div> <!-- /container -->
+{% endblock body %}

@@ -1,0 +1,27 @@
+
+textarea {
+    width:100%;
+    /*border: none;*/
+    background: #eee;
+    }
+.chatBox {
+	border: 1px solid #000;
+	margin-top: 20px;
+	overflow: scroll;
+}
+.chatMsg{
+	overflow: auto;
+	border: 1px solid #ddd;
+}
+
+.chatMsg td:first-child{
+	font-size: 10px;
+	font-style: italic;
+}
+.chatMsg td {
+	padding:5px 20px;
+	border-top:1px solid green;
+}
+.chatMsg td:first-child + td{ /* li:seond-child */
+	color :red;
+}

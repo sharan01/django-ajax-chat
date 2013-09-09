@@ -1,0 +1,30 @@
+{% extends "djangoChat/base.html" %}
+{% block body %}
+	<div class="container">
+		<section class="row">
+			<div class="col-sm-9">
+				<section class="chatBox" style="height:600px">
+					
+				</section>
+				<form method="post" action="#" id='chatForm' name="newMessage" onsubmit="return false">
+				<textarea id='newMessage' name="newmessage" class="boxsizingBorder"></textarea>
+				<input type="submit" value="send">
+				</form>
+			</div>
+			<div class="col-sm-3">
+				<h3>logged in users</h3>
+				<ul>
+			{% for l in logged_users %}
+				<li>{{ l.username }}</li>
+			{% endfor %}
+				</ul>
+			</div>
+		</section>
+	</div>
+	<script class="messageView" type="text/template">	
+
+			<td><%=time%></td>
+			<td><%=user%></td>
+			<td><%=msg%></td>
+	</script>
+{% endblock body %}
