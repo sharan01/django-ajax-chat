@@ -1,11 +1,14 @@
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.signals import user_logged_in, user_logged_out  
+from django.contrib.auth.models import User
+import urllib, hashlib, binascii
 
 class Message(models.Model):
 	user = models.CharField(max_length=200)
 	message = models.TextField(max_length=200)
 	time = models.DateTimeField(auto_now_add=True)
+	gravatar = models.CharField(max_length=300)
 	def __unicode__(self):
 		return self.user
 	# def save(self):
@@ -16,21 +19,20 @@ class Message(models.Model):
 
 
 
-class LoggedUser(models.Model):
-	username = models.CharField(max_length=30, primary_key=True)
-
-	def __unicode__(self):
-		return self.username
-
-def login_user(sender, request, user, **kwargs):
-	LoggedUser(username=user.username).save()
-
-def logout_user(sender, request, user, **kwargs):
-	try:
-		u = LoggedUser.objects.get(pk=user.username)
-		u.delete()
-	except LoggedUser.DoesNotExist:
-		pass
-
-user_logged_in.connect(login_user)
-user_logged_out.connect(logout_user)
+def generate_avatar(email):
+	a = "http://www.gravatar.com/avatar/"
+	a+=hashlib.md5(email.lower()).hexdigest()
+	a+='?d=identicon'
+	return a
+def hash_username(username):
+	a = binascii.crc32(username)
+	return a
+class ChatUser(models.Model):
+	user = models.OneToOneField(User)
+	userID =  models.IntegerField()
+	username = models.CharField(max_length=300)
+	is_chat_user = models.BooleanField(default=False)
+	gravatar_url = models.CharField(max_length=300)
+	last_accessed = models.DateTimeField(auto_now_add=True)
+	
+User.profile = property(lambda u: ChatUser.objects.get_or_create(user=u,defaults={'gravatar_url':generate_avatar(u.email),'username':u.username,'userID':hash_username(u.username)})[0])

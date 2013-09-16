@@ -1,0 +1,12 @@
+{
+    "name":"Chat",
+    "version":"0.2",
+    "dependencies":{
+        "jquery-legacy":"jquery#1.10",
+        "jquery":null,
+        "underscore-amd":null,
+        "backbone-amd":null,
+        "requirejs":null,
+	"requirejs-text":null
+    }
+}

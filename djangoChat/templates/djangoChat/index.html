@@ -1,30 +1,51 @@
 {% extends "djangoChat/base.html" %}
 {% block body %}
-	<div class="container">
-		<section class="row">
-			<div class="col-sm-9">
-				<section class="chatBox" style="height:600px">
-					
-				</section>
-				<form method="post" action="#" id='chatForm' name="newMessage" onsubmit="return false">
-				<textarea id='newMessage' name="newmessage" class="boxsizingBorder"></textarea>
-				<input type="submit" value="send">
-				</form>
-			</div>
-			<div class="col-sm-3">
-				<h3>logged in users</h3>
-				<ul>
-			{% for l in logged_users %}
-				<li>{{ l.username }}</li>
-			{% endfor %}
-				</ul>
-			</div>
-		</section>
-	</div>
-	<script class="messageView" type="text/template">	
+	
+<!--  chat box area -->
+<section class="chatBox">
+	
+</section>
 
-			<td><%=time%></td>
-			<td><%=user%></td>
-			<td><%=msg%></td>
-	</script>
+
+
+
+
+<!--  sidebar area -->
+<section class="sidebar">
+	<h4><a href="/chat/logout">logout</a></h4>
+	<div class="side">
+	<h2>Online Users</h2>
+	<div class="onlineUsers">
+		
+		
+			
+
+	</div>
+	</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!--  input area  -->
+<section class="input-area">
+	<img width="64" height="64" src="{{user.profile.gravatar_url}}" alt="avatar" title="signup at gravatar.com with your email which is resgistered here to change your avatar">	
+	<textarea class="input-box"></textarea>
+	<button class="submit">send</button>
+	<p class="clear-both"></p>
+</section>
+
+
+
+	
+
+				
+
 {% endblock body %}

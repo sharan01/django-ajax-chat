@@ -8,20 +8,20 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-ajax-chat',
-    version='0.1',
+    version='0.2',
     packages=['djangoChat'],
     include_package_data=True,
-    license='BSD License',  
+    license='MIT License',  
     description='A simple Django ajax chat.',
     long_description=README,
-    url='http://www.sharan.co/',
+    url='https://github.com/sharan01/django-ajax-chat',
     author='sharan salokye',
     author_email='salokye@sharan.co',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License', # example license
+        'License :: OSI Approved :: MIT License', # example license
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         # replace these appropriately if you are using Python 3

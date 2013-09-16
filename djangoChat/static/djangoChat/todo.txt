@@ -1,0 +1,14 @@
+chat input format options - links images youtube embbed  etc
+escape html
+allow selected tags in input
+
+admin stuff
+-------------------
+see logs
+ban users
+
+
+private messages ???
+
+
+

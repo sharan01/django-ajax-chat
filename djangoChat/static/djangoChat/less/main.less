@@ -1,0 +1,133 @@
+@color: #000;
+
+body {
+  color: @color;
+}
+.clear-both{
+	clear:both;
+	float: none;
+  height:0;
+}
+.chatBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  
+}
+.chatBox .chatMsgs{
+  margin-bottom: 100px;
+}
+.monologue{
+  margin-bottom: 10px;
+}
+.monologue .signature{
+  float: left;
+  width:10%;
+  margin-right: 20px;
+}
+.monologue .signature .username{
+  width:70%;
+  float: right;
+  font-size: 12px;
+  line-height: 1.2em;
+  overflow: hidden;
+  margin-top: 5px;
+  text-align: right;
+  word-wrap:break-word;
+
+} 
+.monologue .signature .avatar{
+  width:20%;
+  float: right;
+  margin-left:5px; 
+} 
+
+.monologue .messages{
+  float: left;
+  width:80%;
+  padding: 5px 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  word-wrap:break-word;
+}
+/*=======================================================================*/
+.sidebar {
+  width: 18%;
+  z-index: 5;
+  position: fixed;
+  right: 0;
+}
+
+.sidebar .side{
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: 20px;
+}
+.side h2{
+  color: #333;
+}
+.onlineUsers .s_user{
+  margin-bottom: 10px;
+}
+.onlineUsers .s_user .s_avatar{
+  float: left;
+}
+.onlineUsers .s_user .s_username{
+  float: left;
+}
+.onlineUsers .s_user .s_username a{
+  text-decoration: none;
+  font-size: 18px;
+  color: #333;
+  margin-left: 5px;
+  word-wrap:break-word;
+}
+
+/* ================================================================= */
+.input-area{
+  position: fixed;
+  bottom: 0;
+  z-index:6;
+  width: 100%;
+  
+  background-color: #ccc;
+  height:75px;
+  box-shadow: 0px -2px 10px 1px #555;
+  
+}
+.input-area img{
+  
+  float: left;
+  text-align: center;
+  margin: 5px;
+}
+.input-area .input-box{
+  float: left;
+  width:60%;
+  background-color: #eee;
+  resize:none;
+  
+  border:none;
+  margin: 5px;
+  height: 64px;
+}
+.input-area .submit{
+  float: left;
+  width:8%;
+  height: 64px;
+  margin: 5px;
+}
+
+
+
+#footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:70px;
+   width:100%;
+   background:#999;
+   z-index: 9;
+}

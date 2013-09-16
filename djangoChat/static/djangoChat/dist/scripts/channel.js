@@ -1,0 +1,1 @@
+define(["backbone"],function(e){var t=_.extend({},e.Events);return t});

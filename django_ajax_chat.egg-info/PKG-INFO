@@ -1,11 +1,11 @@
 Metadata-Version: 1.1
 Name: django-ajax-chat
-Version: 0.1
+Version: 0.2
 Summary: A simple Django ajax chat.
-Home-page: http://www.sharan.co/
+Home-page: https://github.com/sharan01/django-ajax-chat
 Author: sharan salokye
 Author-email: salokye@sharan.co
-License: BSD License
+License: MIT License
 Description: =====
         Django Chat
         =====
@@ -13,7 +13,9 @@ Description: =====
         DjangoChat is a simple Django Chat app
         
         
-        
+        demo
+        ---------
+        http://www.sharan.co/chat/
         Quick start
         -----------
         
@@ -32,6 +34,17 @@ Description: =====
         
         4. Start the development server and visit http://127.0.0.1:8000/chat/
         
+        ----------------------------------------------------------------
+        todo list
+        --------------------------------------------------------------
+        -chat input format options - links images youtube embbed  etc
+        -escape html
+        -allow selected tags in input
+        
+        -admin stuff
+        ----------
+        -see logs
+        -private messages ???
         
         
         
@@ -39,7 +52,7 @@ Platform: UNKNOWN
 Classifier: Environment :: Web Environment
 Classifier: Framework :: Django
 Classifier: Intended Audience :: Developers
-Classifier: License :: OSI Approved :: BSD License
+Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Classifier: Programming Language :: Python
 Classifier: Programming Language :: Python :: 2

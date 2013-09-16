@@ -1,0 +1,4 @@
+issues
+---------
+avatars
+encode html for dangerous tags

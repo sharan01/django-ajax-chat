@@ -1,8 +1,10 @@
-{% extends "djangoChat/base.html" %}
-
-{% block body %}
-
-
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Log In</title>
+</head>
+<body>
+	
 <div class="container" style="max-width:400px">
 
       <form method="post" class="form-signin">{% csrf_token %}
@@ -13,4 +15,12 @@
       </form>
 		<p>{{error}}</p>
     </div> <!-- /container -->
-{% endblock body %}
+
+
+
+
+
+
+	
+</body>
+</html>
