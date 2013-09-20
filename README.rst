@@ -23,7 +23,7 @@ Quick start
 
       url(r'^chat/', include('djangoChat.urls')),
 
-3. Run `python manage.py migrate` to create the djangoChat models.
+3. Run `python manage.py syncdb` to create the djangoChat models.
 
 4. Start the development server and visit http://127.0.0.1:8000/chat/
 
