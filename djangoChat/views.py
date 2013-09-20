@@ -10,14 +10,23 @@ from djangoChat.models import Message, ChatUser
 from django.contrib.auth.models import User
 import datetime
 from django.utils.timezone import now as utcnow
+from django.utils.safestring import mark_safe
+
 
 
 def index(request):
-	if request.method == 'POST':
-		print request.POST
-	logged_users = []
+
 	if request.user.username and request.user.profile.is_chat_user:
-		context = {'logged_users':logged_users}
+		# intial chat json data
+
+		r = Message.objects.order_by('-time')[:20]
+		res = []
+		for msgs in reversed(r) :
+			res.append({'id':msgs.id,'user':msgs.user,'msg':msgs.message,'time':msgs.time.strftime('%I:%M:%S %p').lstrip('0'),'gravatar':msgs.gravatar})
+	
+		data = json.dumps(res)
+		# end json
+		context = {'data':mark_safe(data)}
 		return render(request, 'djangoChat/index.html', context)
 	else:
 		return HttpResponseRedirect(reverse('login'))
@@ -75,7 +84,7 @@ def chat_api(request):
 
 
 	# get request
-	r = Message.objects.order_by('-time')[:70]
+	r = Message.objects.order_by('-time')[:20]
 	res = []
 	for msgs in reversed(r) :
 		res.append({'id':msgs.id,'user':msgs.user,'msg':msgs.message,'time':msgs.time.strftime('%I:%M:%S %p').lstrip('0'),'gravatar':msgs.gravatar})
@@ -89,16 +98,19 @@ def chat_api(request):
 def logged_chat_users(request):
 
 	u = ChatUser.objects.filter(is_chat_user=True)
-
+	for k in u:
+		print k.username
 	for j in u:
 		elapsed = utcnow() - j.last_accessed
-		if elapsed > datetime.timedelta(seconds=35):
-
+		if elapsed > datetime.timedelta(seconds=45):
+			print elapsed
 			j.is_chat_user = False
 			j.save()
 
 	uu = ChatUser.objects.filter(is_chat_user=True)
-	
+	print "after check time and update"
+	for k in uu:
+		print k.username
 
 	d = []
 	for i in uu:
@@ -111,12 +123,13 @@ def logged_chat_users(request):
 
 def update_time(request):
 	if request.user.username:
+		print request.user.username
 		u = request.user.profile
-
-
+		print u.last_accessed
+		print utcnow()
 		u.last_accessed = utcnow()
 		u.is_chat_user = True
 		u.save()
-
+		print u.last_accessed
 		return HttpResponse('updated')
 	return HttpResponse('who are you?')

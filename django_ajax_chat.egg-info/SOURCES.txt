@@ -45,6 +45,7 @@ djangoChat/static/djangoChat/app/scripts/views/messages.js
 djangoChat/static/djangoChat/app/scripts/views/user.js
 djangoChat/static/djangoChat/app/scripts/views/users.js
 djangoChat/static/djangoChat/css/main.css
+djangoChat/static/djangoChat/css/normalize.css
 djangoChat/static/djangoChat/dist/build.txt
 djangoChat/static/djangoChat/dist/build/app.build.js
 djangoChat/static/djangoChat/dist/scripts/channel.js

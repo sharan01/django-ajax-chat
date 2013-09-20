@@ -10,7 +10,7 @@ require.config({
 
 require(['views/messages','views/addMessage','collections/messages', ],function(MsgsView,AddMsg,MsgCollection){
 
-	msgCollec = new MsgCollection();
+	msgCollec = new MsgCollection(jsonData);
 	v = new MsgsView({collection:msgCollec});
 
 	a = new AddMsg();
@@ -40,5 +40,7 @@ require(['jquery'],function($){
 		console.log("updated");
 	});
 	},30000);
+
+	
 	
 });

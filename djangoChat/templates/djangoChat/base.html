@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/static/djangoChat/css/normalize.css" />
     <link href="/static/djangoChat/css/main.css" rel="stylesheet" type="text/css"/>
-    <script data-main="/static/djangoChat/dist/scripts/main" type="text/javascript" src="/static/djangoChat/dist/scripts/vendor/requirejs/require.js"></script>
+    <script type="text/javascript"> 
+      
+      jsonData = {{data}};
+    </script>
+   <script data-main="/static/djangoChat/app/scripts/main" type="text/javascript" src="/static/djangoChat/app/scripts/vendor/requirejs/require.js"></script>
+    
   </head>
   <body>
     {% block body %}

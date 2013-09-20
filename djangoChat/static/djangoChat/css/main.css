@@ -1,5 +1,6 @@
 body {
   color: #000000;
+  background-color: #E9E9E9;
 }
 .clear-both {
   clear: both;
@@ -37,14 +38,28 @@ body {
   width: 20%;
   float: right;
   margin-left: 5px;
+  
+}
+.monologue .signature .avatar img{
+  box-shadow: 0px 1px 3px #aaa;
 }
 .monologue .messages {
   float: left;
   width: 80%;
   padding: 5px 10px;
-  background-color: #eee;
+  background-color: #fff;
   border-radius: 5px;
   word-wrap: break-word;
+  box-shadow: 1px 1px 1px 0px #bbb;
+  color:#444;
+}
+.monologue .msg span{
+  font-size: 7px;
+  float: right;
+  background-color: #eee;
+  padding: 5px;
+  font-weight: bold;
+
 }
 /*=======================================================================*/
 .sidebar {
@@ -54,10 +69,11 @@ body {
   right: 0;
 }
 .sidebar .side {
-  background-color: #eee;
+  background-color: #fff;
   border-radius: 5px;
   padding: 10px;
   margin-right: 20px;
+  box-shadow: 0px 1px 3px #aaa;
 }
 .side h2 {
   color: #333;
@@ -84,7 +100,7 @@ body {
   bottom: 0;
   z-index: 6;
   width: 100%;
-  background-color: #ccc;
+  background-color: #ddd;
   height: 75px;
   box-shadow: 0px -2px 10px 1px #555555;
 }
@@ -96,7 +112,7 @@ body {
 .input-area .input-box {
   float: left;
   width: 60%;
-  background-color: #eee;
+  background-color: #fff;
   resize: none;
   border: none;
   margin: 5px;
