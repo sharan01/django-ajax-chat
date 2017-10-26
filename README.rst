@@ -19,7 +19,7 @@ Quick start
           'djangoChat',
       )
 
-2. Include the polls URLconf in your project urls.py like this::
+2. Include the polls URLconf in your project urls.py ::
 
       url(r'^chat/', include('djangoChat.urls')),
 
@@ -27,16 +27,5 @@ Quick start
 
 4. Start the development server and visit http://127.0.0.1:8000/chat/
 
-=====
-to do list 
-=====
-improve sidebar
-chat input format options - links images youtube embbed  etc
-escape html
-allow selected tags in input
-
-admin stuff
-see logs
-private messages ???
 
 
